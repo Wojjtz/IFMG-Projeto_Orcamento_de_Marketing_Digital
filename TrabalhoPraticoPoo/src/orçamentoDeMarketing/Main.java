@@ -89,7 +89,8 @@ public class Main {
 
                     System.out.print("Gostaria de finalizar a compra? \nR: ");
                     if (in.next().equalsIgnoreCase("sim")) {
-                        System.out.println("Preço total final: R$" + String.format("%.2f",calcularPrecoTotal()));
+                        System.out.println("Preço total final: R$" + String.format("%.2f",calcularPrecoTotal())
+                            + "\nCrédito, Débito ou Pix?");
                         sair = true;
                     } else {
                         break;
