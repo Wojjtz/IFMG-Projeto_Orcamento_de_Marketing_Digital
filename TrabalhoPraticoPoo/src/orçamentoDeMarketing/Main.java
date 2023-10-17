@@ -21,6 +21,7 @@ public class Main {
     static ArrayList<Video> listaVideos = new ArrayList<>();
     static ArrayList<Imagem> listaImagens = new ArrayList<>();
     static ArrayList<Site> listaSites = new ArrayList<>();
+    static int itensCarrinho = 1;
 
     public static void main(String[] args) {
         boolean sair = false;
@@ -83,14 +84,14 @@ public class Main {
                     System.out.println("Seu site foi registrado. \nAbra o carrinho para ver o preço final.");
                     break;
                 case 6:
-                    imprimirListaVideos();
-                    imprimirListaImagens();
-                    imprimirListaSites();
+                    imprimirLista(listaVideos);
+                    imprimirLista(listaImagens);
+                    imprimirLista(listaSites);
 
                     System.out.print("Gostaria de finalizar a compra? \nR: ");
                     if (in.next().equalsIgnoreCase("sim")) {
-                        System.out.println("Preço total final: R$" + String.format("%.2f",calcularPrecoTotal())
-                            + "\nCrédito, Débito ou Pix?");
+                        System.out.println("Preço total final: R$" + String.format("%.2f", caclularPrecoFinalTotal())
+                                + "\nCrédito, Débito ou Pix?");
                         sair = true;
                     } else {
                         break;
@@ -101,36 +102,30 @@ public class Main {
         } while (!sair);
     }
 
-    static void imprimirListaVideos() {
-        for (int i = 0; i < listaVideos.size(); i++) {
-            System.out.println("Vídeo " + (i + 1) + "\n" + listaVideos.get(i).toString());
+    static void imprimirLista(ArrayList lista) {
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println("Item " + itensCarrinho + "\n" + lista.get(i).toString());
+            itensCarrinho++;
         }
     }
 
-    static void imprimirListaImagens() {
-        for (int i = 0; i < listaImagens.size(); i++) {
-            System.out.println("Imagem " + (i + 1) + "\n" + listaImagens.get(i).toString());
-        }
-    }
-
-    private static void imprimirListaSites() {
-        for (int i = 0; i < listaSites.size(); i++) {
-            System.out.println("Site " + (i + 1) + "\n" + listaSites.get(i).toString());
-        }
-    }
-
-    private static double calcularPrecoTotal() {
+    private static double caclularPrecoFinalTotal() {
         double precoFinal = 0;
-        for (int i = 0; i < listaVideos.size(); i++) {
-            precoFinal += listaVideos.get(i).getPrecoFinal();
-        }
-        for (int i = 0; i < listaImagens.size(); i++) {
-            precoFinal += listaImagens.get(i).getPrecoFinal();
-        }
-        for (int i = 0; i < listaSites.size(); i++) {
-            precoFinal += listaSites.get(i).getPreçoFinal();
+        int tamanhoTotalListas = (listaVideos.size() + listaImagens.size() + listaSites.size());
+
+        for (int i = 0; i < tamanhoTotalListas; i++) {
+            if (listaVideos.size() > i) {
+                precoFinal += listaVideos.get(i).getPrecoFinal();
+            }
+            if (listaImagens.size() > i) {
+                precoFinal += listaImagens.get(i).getPrecoFinal();
+            }
+            if (listaSites.size() > i) {
+                precoFinal += listaSites.get(i).getPreçoFinal();
+            }
         }
 
         return precoFinal;
     }
+
 }
