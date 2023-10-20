@@ -94,7 +94,7 @@ public class Imagem {
 
     @Override
     public String toString() {
-        return "Imagem:\n   Dimenções: " + this.dimensao + "\n   Nível de pesquisa: "
+        return "IMAGEM:\n   Dimenções: " + this.dimensao + "\n   Nível de pesquisa: "
                 + this.textoNivelDePesquisa + "\n   Preço: R$" + String.format("%.2f", this.precoFinal)
                 + "\n   Tempo estimado de serviço: " + this.tempoEstimadoServico + " minutos";
     }

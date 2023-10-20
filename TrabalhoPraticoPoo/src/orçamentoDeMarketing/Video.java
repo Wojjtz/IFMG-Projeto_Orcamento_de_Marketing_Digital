@@ -75,7 +75,7 @@ public class Video {
 
     @Override
     public String toString() {
-        return "Video:\n   Duração: " + this.getDuracao() + " segundos"
+        return "VIDEO:\n   Duração: " + this.getDuracao() + " segundos"
                 + "\n   Tipo: " + (this.isFilmagem() ? "Filmagem" : "Animação")
                 + "\n   Preço: R$" + String.format("%.2f", this.getPrecoFinal()) + "\n   Tempo estimado de serviço: "
                 + this.getTempoEstimadoServico() + " minutos";

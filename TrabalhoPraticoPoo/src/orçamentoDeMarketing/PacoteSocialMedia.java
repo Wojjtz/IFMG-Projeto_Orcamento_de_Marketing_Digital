@@ -18,6 +18,9 @@ public class PacoteSocialMedia {
     private Site site = new Site();
     private Video[] videos;
     private TrafegoPago trafegoPago = new TrafegoPago();
+    private double precoFinalTotal;
+    private String tempoEstimadoTotal;
+   
 
     public void criarSite(int paginas, boolean tipoSite, int produtosCadastrados) {
         this.site.setPaginas(paginas);
@@ -89,7 +92,10 @@ public class PacoteSocialMedia {
     }
 
     public String toString() {
-        return "Pacote Social Media: \n" + imprimirImagens() + "\n" + imprimirImagensCarrossel() + "\n" + imprimirVideos() + this.trafegoPago.toString() + "\n" + this.site.toString();
+        return "PACOTE SOCIAL MEDIA\n\n" + imprimirImagens() + "\n" + imprimirImagensCarrossel() + "\n"
+                + imprimirVideos() + "\n\n" + this.trafegoPago.toString() + "\n\n" + this.site.toString() 
+                + "\n\nPreço total (-10%): R$" + String.format("%.2f", this.calcularPrecoTotalPacoteSocialMedia())
+                + "\nTempo estimado de serviço: " + this.calcularTempoEstimadoTotal() + " dias";
     }
 
     private String imprimirImagens() {
@@ -110,8 +116,33 @@ public class PacoteSocialMedia {
     }
 
     private String imprimirVideos() {
-        return this.videos[0].toString() + "\n" + this.videos[1].toString() + "\n";
+        return this.videos[0].toString() + "\n" + this.videos[1].toString();
 
+    }
+
+    public double calcularPrecoTotalPacoteSocialMedia() {
+        double precoTotal = 0;
+
+        for (int i = 0; i < (imagens.length + imagensCarrossel.length + videos.length); i++) {
+            if (imagens.length > i) {
+                precoTotal += imagens[i].getPrecoFinal();
+            }
+            if (imagensCarrossel.length > i) {
+                precoTotal += imagensCarrossel[i].getPrecoFinal();
+            }
+            if (videos.length > i) {
+                precoTotal += videos[i].getPrecoFinal();
+            }
+        }
+
+        precoTotal += (site.getPreçoFinal() + trafegoPago.getPrecoFinal()) - (precoTotal*0.1);
+        this.precoFinalTotal = precoTotal;
+        return precoTotal;
+    }
+    
+    public String calcularTempoEstimadoTotal(){
+        this.tempoEstimadoTotal = String.valueOf(this.site.getTempoEstimadoDeServico() + 3);
+        return this.tempoEstimadoTotal;
     }
 
     public Imagem[] getImagens() {
@@ -146,4 +177,20 @@ public class PacoteSocialMedia {
         this.trafegoPago = trafegoPago;
     }
 
+    public double getPrecoFinalTotal() {
+        return precoFinalTotal;
+    }
+
+    public void setPrecoFinalTotal(double precoFinalTotal) {
+        this.precoFinalTotal = precoFinalTotal;
+    }
+
+    public String getTempoEstimadoTotal() {
+        return tempoEstimadoTotal;
+    }
+
+    public void setTempoEstimadoTotal(String tempoEstimadoTotal) {
+        this.tempoEstimadoTotal = tempoEstimadoTotal;
+    }
+    
 }

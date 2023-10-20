@@ -21,7 +21,7 @@ public class Site {
     private int produtosCadastrados;
     private double valorProduto;
     private int tempoEstimadoDeServico;
-    private int tempoPorProduto;
+    private int tempoPelaQuantidadeProduto;
 
     public Site() {
         this.precoFinal = 0;
@@ -59,30 +59,30 @@ public class Site {
     public void calcularTempoEstimadoServico() {
         if (this.loja) {
             if (produtosCadastrados > 400) {
-                tempoPorProduto = 42;
+                tempoPelaQuantidadeProduto = 42;
             } else if (produtosCadastrados > 250) {
-                tempoPorProduto = 30;
+                tempoPelaQuantidadeProduto = 30;
             } else if (produtosCadastrados > 100) {
-                tempoPorProduto = 20;
+                tempoPelaQuantidadeProduto = 20;
             } else if (produtosCadastrados > 20) {
-                tempoPorProduto = 13;
+                tempoPelaQuantidadeProduto = 13;
             } else if (produtosCadastrados > 10) {
-                tempoPorProduto = 7;
+                tempoPelaQuantidadeProduto = 7;
             } else {
-                tempoPorProduto = 4;
+                tempoPelaQuantidadeProduto = 4;
             }
         } else {
-            tempoPorProduto = 0;
+            tempoPelaQuantidadeProduto = 0;
         }
-        this.tempoEstimadoDeServico = (paginas * 3) + tempoPorProduto;
+        this.tempoEstimadoDeServico = (paginas * 3) + tempoPelaQuantidadeProduto;
 
     }
 
     @Override
     public String toString() {
-        return "Site:\n   Preço: R$" + String.format("%.2f", this.precoFinal) + "\n   Páginas: " + this.paginas
+        return "SITE:\n   Preço: R$" + String.format("%.2f", this.precoFinal) + "\n   Páginas: " + this.paginas
                 + "\n   Tipo: " + (this.loja == true ? "Loja" : "Institucional") + "\n   Produtos cadastrados: " + this.produtosCadastrados
-                + "\n   Tempo estimado de serviço: " + tempoEstimadoDeServico + " dias";
+                + "\n   Tempo estimado de serviço: " + this.tempoEstimadoDeServico + " dias";
     }
 
     public void setPaginas(int paginas) {

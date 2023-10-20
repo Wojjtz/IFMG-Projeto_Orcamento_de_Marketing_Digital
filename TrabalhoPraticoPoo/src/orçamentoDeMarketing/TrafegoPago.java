@@ -27,12 +27,12 @@ public class TrafegoPago {
     }
 
     public double calcularPrecoFinal() {
-        
-        return this.valorInvestido * 1.35;
+        this.precoFinal = this.valorInvestido * 1.35;
+        return this.precoFinal;
     }
     
     public String toString(){
-        return "Tráfego pago: \n   Preço: " + this.precoFinal + "\n   Nicho: " + this.nicho;
+        return "TRAFEGO PAGO: \n   Preço: " + this.precoFinal + "\n   Nicho: " + this.nicho;
     }
 
     public double getPrecoFinal() {

@@ -21,14 +21,17 @@ public class Main {
     static ArrayList<Video> listaVideos = new ArrayList<>();
     static ArrayList<Imagem> listaImagens = new ArrayList<>();
     static ArrayList<Site> listaSites = new ArrayList<>();
+    static ArrayList<TrafegoPago> listaTrafego = new ArrayList<>();
     static int itensCarrinho = 1;
     static PacoteSocialMedia psm;
-
+    static int tamanhoTotalListas = (listaVideos.size() + listaImagens.size() + listaSites.size());
+    
     public static void main(String[] args) {
         boolean sair = false;
         int indexListaVideos = 0;
         int indexListaImagens = 0;
         int indexListaSites = 0;
+        int indexListaTrafego = 0;
 
         do {
             System.out.print("-----------------------"
@@ -84,36 +87,52 @@ public class Main {
                     indexListaSites++;
                     System.out.println("Seu site foi registrado. \nAbra o carrinho para ver o preço final.");
                     break;
+                case 4:
+                    listaTrafego.add(new TrafegoPago());
+                    System.out.print("-----------------------\n"
+                        + "Qual o nicho do Tráfego Pago? \nR: ");
+                    listaTrafego.get(indexListaTrafego).setNicho(in.next());
+                    System.out.print("Quanto quer investir? \nR: R$");
+                    listaTrafego.get(indexListaTrafego).setValorInvestido(in.nextDouble());
+                    listaTrafego.get(indexListaTrafego).calcularPrecoFinal();
+                    System.out.println("Seu Tráfego Pago foi registrado. Abra o carrinho para ver o preço final.");
+                    indexListaTrafego++;
+                    break;
                 case 5:
                     psm = new PacoteSocialMedia();
                     psm.criarImagensPosts();
                     psm.criarCarrossel();
                     psm.criarVideos();
-                    System.out.print("Qual o nico do Tráfego Pago? R: ");
+                    System.out.print("Qual o nicho do Tráfego Pago? \nR: ");
                     String nicho = in.next();
                     System.out.print("Quanto quer investir: R: R$");
                     double valorInvestido = in.nextDouble();
                     psm.criarTrafegoPago(nicho, valorInvestido);
-                    System.out.print("Quantas páginas terá seu Site? R: ");
+                    System.out.print("Quantas páginas terá seu Site? \nR: ");
                     int paginas = in.nextInt();
                     System.out.print("O site será: \n 1 - Loja \n 2 - Institucional \nR: ");
                     if (in.nextInt() == 1) {
-                        System.out.print("Quantos produtos ou serviços gostaria de anunciar? R: ");
+                        System.out.print("Quantos produtos ou serviços gostaria de anunciar? \nR: ");
                         psm.criarSite(paginas, true, in.nextInt());
                     } else {
                         psm.criarSite(paginas, false, 0);
                     }
                     System.out.println(psm.toString());
-
+                    break;
                 case 6:
+                    System.out.println("-----------------------");
                     imprimirLista(listaVideos);
                     imprimirLista(listaImagens);
                     imprimirLista(listaSites);
-
-                    System.out.print("Gostaria de finalizar a compra? \nR: ");
+                    imprimirLista(listaTrafego);
+                    if (psm != null) {
+                        System.out.println("Item " + itensCarrinho + "\n" + psm.toString());
+                    }
+                    itensCarrinho = 1;
+                    System.out.print("-----------------------\n"
+                            + "Gostaria de finalizar a compra? sim/nao \nR: ");
                     if (in.next().equalsIgnoreCase("sim")) {
-                        System.out.println("Preço total final: R$" + String.format("%.2f", caclularPrecoFinalTotal())
-                                + "\nCrédito, Débito ou Pix?");
+                        System.out.println("\n\nPREÇO TOTAL FINAL: R$" + String.format("%.2f", caclularPrecoFinalTotal()));
                         sair = true;
                     } else {
                         break;
@@ -133,7 +152,7 @@ public class Main {
 
     private static double caclularPrecoFinalTotal() {
         double precoFinal = 0;
-        int tamanhoTotalListas = (listaVideos.size() + listaImagens.size() + listaSites.size());
+        
 
         for (int i = 0; i < tamanhoTotalListas; i++) {
             if (listaVideos.size() > i) {
@@ -147,7 +166,7 @@ public class Main {
             }
         }
 
-        return precoFinal;
+        return precoFinal + psm.getPrecoFinalTotal();
     }
 
 }
