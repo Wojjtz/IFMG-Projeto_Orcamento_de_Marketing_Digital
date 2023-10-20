@@ -22,6 +22,7 @@ public class Main {
     static ArrayList<Imagem> listaImagens = new ArrayList<>();
     static ArrayList<Site> listaSites = new ArrayList<>();
     static int itensCarrinho = 1;
+    static PacoteSocialMedia psm;
 
     public static void main(String[] args) {
         boolean sair = false;
@@ -83,6 +84,27 @@ public class Main {
                     indexListaSites++;
                     System.out.println("Seu site foi registrado. \nAbra o carrinho para ver o preço final.");
                     break;
+                case 5:
+                    psm = new PacoteSocialMedia();
+                    psm.criarImagensPosts();
+                    psm.criarCarrossel();
+                    psm.criarVideos();
+                    System.out.print("Qual o nico do Tráfego Pago? R: ");
+                    String nicho = in.next();
+                    System.out.print("Quanto quer investir: R: R$");
+                    double valorInvestido = in.nextDouble();
+                    psm.criarTrafegoPago(nicho, valorInvestido);
+                    System.out.print("Quantas páginas terá seu Site? R: ");
+                    int paginas = in.nextInt();
+                    System.out.print("O site será: \n 1 - Loja \n 2 - Institucional \nR: ");
+                    if (in.nextInt() == 1) {
+                        System.out.print("Quantos produtos ou serviços gostaria de anunciar? R: ");
+                        psm.criarSite(paginas, true, in.nextInt());
+                    } else {
+                        psm.criarSite(paginas, false, 0);
+                    }
+                    System.out.println(psm.toString());
+
                 case 6:
                     imprimirLista(listaVideos);
                     imprimirLista(listaImagens);

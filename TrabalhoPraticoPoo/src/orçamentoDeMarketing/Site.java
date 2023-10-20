@@ -80,7 +80,7 @@ public class Site {
 
     @Override
     public String toString() {
-        return "   Preço: R$" + String.format("%.2f", this.precoFinal) + "\n   Páginas: " + this.paginas
+        return "Site:\n   Preço: R$" + String.format("%.2f", this.precoFinal) + "\n   Páginas: " + this.paginas
                 + "\n   Tipo: " + (this.loja == true ? "Loja" : "Institucional") + "\n   Produtos cadastrados: " + this.produtosCadastrados
                 + "\n   Tempo estimado de serviço: " + tempoEstimadoDeServico + " dias";
     }

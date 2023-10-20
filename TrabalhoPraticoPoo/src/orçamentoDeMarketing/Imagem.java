@@ -25,6 +25,13 @@ public class Imagem {
         this.tempoEstimadoServico = 0;
     }
 
+    public Imagem(String dimensionamento, int nivelDePesquisa) {
+        this.precoFinal = 0;
+        this.dimensao = dimensionamento;
+        this.nivelDePesquisa = nivelDePesquisa;
+        this.tempoEstimadoServico = 0;
+    }
+
     public Imagem(double precoFinal, String dimensionamento, int nivelDePesquisa, double tempoEstimadoServico) {
         this.precoFinal = precoFinal;
         this.dimensao = dimensionamento;
@@ -87,7 +94,7 @@ public class Imagem {
 
     @Override
     public String toString() {
-        return "   Dimenções: " + this.dimensao + "\n   Nível de pesquisa: "
+        return "Imagem:\n   Dimenções: " + this.dimensao + "\n   Nível de pesquisa: "
                 + this.textoNivelDePesquisa + "\n   Preço: R$" + String.format("%.2f", this.precoFinal)
                 + "\n   Tempo estimado de serviço: " + this.tempoEstimadoServico + " minutos";
     }
