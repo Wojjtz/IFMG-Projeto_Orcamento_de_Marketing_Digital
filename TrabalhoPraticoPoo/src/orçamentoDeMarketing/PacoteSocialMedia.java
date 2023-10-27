@@ -26,8 +26,8 @@ public class PacoteSocialMedia {
         this.site.setPaginas(paginas);
         this.site.setLoja(tipoSite);
         this.site.setProdutosCadastrados(produtosCadastrados);
-        this.site.calcularPrecoFinal();
-        this.site.calcularTempoEstimadoServico();
+        this.site.setPrecoFinal();
+        this.site.setTempoEstimadoDeServico();
     }
 
     public void criarTrafegoPago(String nicho, double valorInvestimento) {

@@ -39,7 +39,7 @@ public class Imagem {
         this.tempoEstimadoServico = tempoEstimadoServico;
     }
 
-    public double calcularTempoEstimadoDeServico(String dimensionamento, int nivelDePesquisa) {
+    private double calcularTempoEstimadoDeServico(String dimensionamento, int nivelDePesquisa) {
         //calcula o tempo necessário para pesquisar sobre o assunto do post
         switch (nivelDePesquisa) {
             case 1 -> {
@@ -68,7 +68,7 @@ public class Imagem {
         };
     }
 
-    public double calcularPrecoFinal(String dimensionamento, int nivelDePesquisa) {
+    private double calcularPrecoFinal(String dimensionamento, int nivelDePesquisa) {
         //calcula a porcentagem do valor da imagem 
         //a se acrescentar em relação ao nídel de pesquisa
         switch (nivelDePesquisa) {

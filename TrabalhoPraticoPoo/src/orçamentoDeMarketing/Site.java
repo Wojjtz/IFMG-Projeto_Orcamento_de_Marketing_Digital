@@ -35,7 +35,7 @@ public class Site {
         this.produtosCadastrados = produtosCadastrados;
     }
 
-    public void calcularPrecoFinal() {
+    public double calcularPrecoFinal() {
         if (this.loja) {
             if (produtosCadastrados > 400) {
                 valorProduto = 5;
@@ -53,10 +53,10 @@ public class Site {
         } else {
             valorProduto = 0;
         }
-        this.precoFinal = dominio + (produtosCadastrados * valorProduto) + ((paginas - 1) * acrescimoPaginas) + construcaoSite;
+        return dominio + (produtosCadastrados * valorProduto) + ((paginas - 1) * acrescimoPaginas) + construcaoSite;
     }
 
-    public void calcularTempoEstimadoServico() {
+    public int calcularTempoEstimadoServico() {
         if (this.loja) {
             if (produtosCadastrados > 400) {
                 tempoPelaQuantidadeProduto = 42;
@@ -74,7 +74,7 @@ public class Site {
         } else {
             tempoPelaQuantidadeProduto = 0;
         }
-        this.tempoEstimadoDeServico = (paginas * 3) + tempoPelaQuantidadeProduto;
+        return (paginas * 3) + tempoPelaQuantidadeProduto;
 
     }
 
@@ -101,12 +101,16 @@ public class Site {
         this.produtosCadastrados = produtosCadastrados;
     }
 
-    public void setTempoEstimadoDeServico(int tempoEstimadoDeServico) {
-        this.tempoEstimadoDeServico = tempoEstimadoDeServico;
+    public void setTempoEstimadoDeServico() {
+        this.tempoEstimadoDeServico = this.calcularTempoEstimadoServico();
     }
 
     public double getPreçoFinal() {
         return this.precoFinal;
+    }
+
+    public void setPrecoFinal() {
+        this.precoFinal = this.calcularPrecoFinal();
     }
 
     public int getPaginas() {

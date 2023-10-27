@@ -1,16 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package orçamentoDeMarketing;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  *
- * @author rodol
+ * @author Gabriel & Rodolfo
  */
 public class Main {
 
@@ -24,9 +19,9 @@ public class Main {
     static ArrayList<TrafegoPago> listaTrafego = new ArrayList<>();
     static int itensCarrinho = 1;
     static PacoteSocialMedia psm;
-    static int tamanhoTotalListas = (listaVideos.size() + listaImagens.size() + listaSites.size());
-    
+
     public static void main(String[] args) {
+
         boolean sair = false;
         int indexListaVideos = 0;
         int indexListaImagens = 0;
@@ -36,7 +31,8 @@ public class Main {
         do {
             System.out.print("-----------------------"
                     + "\nOrçamento de marketing\n"
-                    + "1 - Vídeo \n2 - Imagem/Foto \n3 - Site \n4 - Trafego Pago \n5 - Pacote Social Media \n6 - Carrinho"
+                    + "\nPara o que deseja contratar nossa agência?\n"
+                    + "1 - Vídeo \n2 - Imagem/Foto \n3 - Site \n4 - Trafego Pago  \n5 - Pacote Social Media (6 imagens - 1 carrossel(três imagens) - 2 videos - tréfego pago - construção de site) \nJá selecionou algo? Tecle 6 para ver seu orçamento"
                     + "\n----------------------- \nR: ");
 
             switch (in.nextInt()) {
@@ -44,10 +40,10 @@ public class Main {
                     listaVideos.add(new Video());
 
                     System.out.print("-----------------------\n"
-                            + "Seu vídeo é animação ou filmagem? \n1 - Filmagem \n2 - Animação"
+                            + "Seu vídeo é uma animação ou filmagem? \n1 - Filmagem \n2 - Animação"
                             + "\nR: ");
                     listaVideos.get(indexListaVideos).setFilmagem(in.nextInt() == 1 ? true : false);
-                    System.out.print("Tempo de duração do vídeo em segundos: ");
+                    System.out.print("Qual seria a média de duração do vídeo? (Digite em segundos) \nR:");
                     listaVideos.get(indexListaVideos).setDuracao(in.nextDouble());
                     listaVideos.get(indexListaVideos).setPrecoFinal();
                     listaVideos.get(indexListaVideos).setTempoEstimadoServico();
@@ -58,9 +54,12 @@ public class Main {
                     listaImagens.add(new Imagem());
 
                     System.out.print("-----------------------\n"
-                            + "Qual a dimensão da imagem?\n - 1:1 \n - 4:5 \n - 9:16 \nR: ");
+                            + "*Usa-se imagens de tamanho 1:1 para o instagram e outras redes sociais, ela é em formato quadrado.\n"
+                            + "*Usa-se imagens de tamanho 4:5 para flyers de evento ou cartões.\n"
+                            + "*Usa-se imagens de tamanho 9:16 para stories, status e fotos retângulares no geral.\n"
+                            + "\nQual a dimensão da imagem?(escreva a dimensão exata)\n - 1:1 \n - 4:5 \n - 9:16  \nR: ");
                     listaImagens.get(indexListaImagens).setDimensionamento(in.next());
-                    System.out.print("Nível de pesquisa: \n 1 - Baixo \n 2 - Médio \n 3 - Alto \nR: ");
+                    System.out.print("Escreva o nível de pesquisa da arte: \n 1 - Já tenho todas as informações e imagens para o post \n 2 - Tenho algumas informações, a agência buscará o resto \n 3 - A agência fará toda a pesquisa para o post informartivo \nR: ");
                     listaImagens.get(indexListaImagens).setNivelDePesquisa(in.nextInt());
                     listaImagens.get(indexListaImagens).setPrecoFinal();
                     listaImagens.get(indexListaImagens).setTempoEstimadoServico();
@@ -70,7 +69,9 @@ public class Main {
                 case 3:
                     listaSites.add(new Site());
                     System.out.print("-----------------------\n"
-                            + "Seu site será: \n 1 - Loja \n 2 - Institucional \nR: ");
+                            + "*Um site institucional é um tipo de website que representa uma organização ou empresa, fornecendo informações sobre sua identidade, missão e serviços."
+                            + "\n*Já o site tipo Loja, fornece as informações que o institucional oferece, mas com uma loja acoplada, onde o cliente consegue comprar pelo próprio site, sem intermédio de terceiros ou atendimento"
+                            + "\nSeu site será: \n 1 - Loja \n 2 - Institucional \nR: ");
                     if (in.nextInt() == 1) {
                         listaSites.get(indexListaSites).setLoja(true);
                         System.out.print("Quantas páginas terá seu site? (Recomenda-se no mínimo 3) \nR: ");
@@ -82,19 +83,19 @@ public class Main {
                         System.out.print("Quantas páginas terá seu site? (Recomenda-se no mínimo 3) \nR: ");
                         listaSites.get(indexListaSites).setPaginas(in.nextInt());
                     }
-                    listaSites.get(indexListaSites).calcularPrecoFinal();
-                    listaSites.get(indexListaSites).calcularTempoEstimadoServico();
+                    listaSites.get(indexListaSites).setPrecoFinal();
+                    listaSites.get(indexListaSites).setTempoEstimadoDeServico();
                     indexListaSites++;
                     System.out.println("Seu site foi registrado. \nAbra o carrinho para ver o preço final.");
                     break;
                 case 4:
                     listaTrafego.add(new TrafegoPago());
                     System.out.print("-----------------------\n"
-                        + "Qual o nicho do Tráfego Pago? \nR: ");
+                            + "Qual o nicho do seu negócio? (Resuma em uma palavra) \nR: ");
                     listaTrafego.get(indexListaTrafego).setNicho(in.next());
-                    System.out.print("Quanto quer investir? \nR: R$");
+                    System.out.print("Quanto quer investir em posts patrocinados? (O valor que digitará será apenas o valor pago às plataformas, no preço final, será acrescido 35% do valor para nosso gerenciamento) \nR: R$");
                     listaTrafego.get(indexListaTrafego).setValorInvestido(in.nextDouble());
-                    listaTrafego.get(indexListaTrafego).calcularPrecoFinal();
+                    listaTrafego.get(indexListaTrafego).setPrecoFinal();
                     System.out.println("Seu Tráfego Pago foi registrado. Abra o carrinho para ver o preço final.");
                     indexListaTrafego++;
                     break;
@@ -103,9 +104,9 @@ public class Main {
                     psm.criarImagensPosts();
                     psm.criarCarrossel();
                     psm.criarVideos();
-                    System.out.print("Qual o nicho do Tráfego Pago? \nR: ");
+                    System.out.print("Qual o nicho do seu negócio? (Resuma em uma palavra) \nR: ");
                     String nicho = in.next();
-                    System.out.print("Quanto quer investir: R: R$");
+                    System.out.print("Quanto quer investir em posts patrocinados? (O valor que digitará será apenas o valor pago às plataformas, no preço final, será acrescido 35% do valor para nosso gerenciamento) \nR: R$");
                     double valorInvestido = in.nextDouble();
                     psm.criarTrafegoPago(nicho, valorInvestido);
                     System.out.print("Quantas páginas terá seu Site? \nR: ");
@@ -125,6 +126,7 @@ public class Main {
                     imprimirLista(listaImagens);
                     imprimirLista(listaSites);
                     imprimirLista(listaTrafego);
+
                     if (psm != null) {
                         System.out.println("Item " + itensCarrinho + "\n" + psm.toString());
                     }
@@ -132,7 +134,9 @@ public class Main {
                     System.out.print("-----------------------\n"
                             + "Gostaria de finalizar a compra? sim/nao \nR: ");
                     if (in.next().equalsIgnoreCase("sim")) {
-                        System.out.println("\n\nPREÇO TOTAL FINAL: R$" + String.format("%.2f", caclularPrecoFinalTotal()));
+                        System.out.println("\n\nPREÇO TOTAL FINAL: R$" + String.format("%.2f", calcularPrecoFinalTotal()));
+                        System.out.println("-----------------------\n"
+                                + "OBRIGADO POR ESCOLHER NOSSA AGENCIA! <3 <3 <3");
                         sair = true;
                     } else {
                         break;
@@ -143,16 +147,16 @@ public class Main {
         } while (!sair);
     }
 
-    static void imprimirLista(ArrayList lista) {
+    private static void imprimirLista(ArrayList lista) {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println("Item " + itensCarrinho + "\n" + lista.get(i).toString());
             itensCarrinho++;
         }
     }
 
-    private static double caclularPrecoFinalTotal() {
+    private static double calcularPrecoFinalTotal() {
+        int tamanhoTotalListas = (listaVideos.size() + listaImagens.size() + listaSites.size() + listaTrafego.size());
         double precoFinal = 0;
-        
 
         for (int i = 0; i < tamanhoTotalListas; i++) {
             if (listaVideos.size() > i) {
@@ -164,9 +168,14 @@ public class Main {
             if (listaSites.size() > i) {
                 precoFinal += listaSites.get(i).getPreçoFinal();
             }
+            if (listaTrafego.size() > i) {
+                precoFinal += listaTrafego.get(i).getPrecoFinal();
+            }
         }
-
-        return precoFinal + psm.getPrecoFinalTotal();
+        if (psm != null) {
+            return precoFinal + psm.getPrecoFinalTotal();
+        } else {
+            return precoFinal;
+        }
     }
-
 }
