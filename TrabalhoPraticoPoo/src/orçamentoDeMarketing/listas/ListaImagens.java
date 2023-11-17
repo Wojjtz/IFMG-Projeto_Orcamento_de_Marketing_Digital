@@ -6,13 +6,13 @@ package orçamentoDeMarketing.listas;
 
 import java.util.ArrayList;
 import java.util.List;
-import orçamentoDeMarketing.Imagem;
+import orçamentoDeMarketing.Classes.Imagem;
 
 /**
  *
  * @author rodol
  */
-public class Imagens {
+public class ListaImagens {
 
     public static List<Imagem> imagens = new ArrayList();
 

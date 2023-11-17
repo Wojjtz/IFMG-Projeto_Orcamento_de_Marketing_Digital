@@ -1,5 +1,10 @@
 package orçamentoDeMarketing;
 
+import orçamentoDeMarketing.Classes.TrafegoPago;
+import orçamentoDeMarketing.Classes.Video;
+import orçamentoDeMarketing.Classes.Imagem;
+import orçamentoDeMarketing.Classes.Site;
+import orçamentoDeMarketing.Classes.PacoteSocialMedia;
 import java.util.ArrayList;
 import java.util.Scanner;
 
