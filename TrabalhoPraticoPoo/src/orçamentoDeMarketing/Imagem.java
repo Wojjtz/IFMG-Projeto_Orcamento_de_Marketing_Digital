@@ -17,6 +17,7 @@ public class Imagem {
     private double taxaPesquisa;
     private double tempoPesquisa;
     private double tempoEstimadoServico;
+    private String tipo = "Imagem";
 
     public Imagem() {
         this.precoFinal = 0;
@@ -43,16 +44,16 @@ public class Imagem {
         //calcula o tempo necessário para pesquisar sobre o assunto do post
         switch (nivelDePesquisa) {
             case 1 -> {
-                this.textoNivelDePesquisa = "Baixo";
                 tempoPesquisa = 30;
+                break;
             }
             case 2 -> {
-                this.textoNivelDePesquisa = "Médio";
                 tempoPesquisa = 45;
+                break;
             }
             case 3 -> {
-                this.textoNivelDePesquisa = "Alto";
                 tempoPesquisa = 60;
+                break;
             }
         }
         //retorna valores em minutos
@@ -72,12 +73,15 @@ public class Imagem {
         //calcula a porcentagem do valor da imagem 
         //a se acrescentar em relação ao nídel de pesquisa
         switch (nivelDePesquisa) {
-            case 1 ->
+            case 1:
                 taxaPesquisa = 130;
-            case 2 ->
+                break;
+            case 2:
                 taxaPesquisa = 115;
-            case 3 ->
+                break;
+            case 3:
                 taxaPesquisa = 100;
+                break;
         }
         //retorna valores em reais
         return switch (dimensionamento) {
@@ -92,43 +96,70 @@ public class Imagem {
         };
     }
 
-    @Override
-    public String toString() {
-        return "IMAGEM:\n   Dimenções: " + this.dimensao + "\n   Nível de pesquisa: "
-                + this.textoNivelDePesquisa + "\n   Preço: R$" + String.format("%.2f", this.precoFinal)
-                + "\n   Tempo estimado de serviço: " + this.tempoEstimadoServico + " minutos";
+    public String getTextoNivelDePesquisa() {
+        switch (this.nivelDePesquisa) {
+            case 1:
+                return "Baixo";
+            case 2:
+                return "Médio";
+            case 3:
+                return "Alto";
+        }
+        return null;
+    }
+
+    public void setTextoNivelDePesquisa() {
+        this.textoNivelDePesquisa = this.getTextoNivelDePesquisa();
     }
 
     public double getPrecoFinal() {
-        return this.precoFinal;
+        return this.calcularPrecoFinal(dimensao, nivelDePesquisa);
     }
 
     public void setPrecoFinal() {
         this.precoFinal = this.calcularPrecoFinal(this.dimensao, this.nivelDePesquisa);
     }
 
-    public String getDimensionamento() {
-        return this.dimensao;
+    public String getDimensao() {
+        return dimensao;
     }
 
-    public void setDimensionamento(String dimensionamento) {
-        this.dimensao = dimensionamento;
+    public void setDimensao(String dimensao) {
+        this.dimensao = dimensao;
     }
 
     public int getNivelDePesquisa() {
-        return this.nivelDePesquisa;
+        return nivelDePesquisa;
     }
 
     public void setNivelDePesquisa(int nivelDePesquisa) {
         this.nivelDePesquisa = nivelDePesquisa;
     }
 
-    public double getTempoEstimadoServico() {
-        return this.tempoEstimadoServico;
+    public double getTempoPesquisa() {
+        return tempoPesquisa;
     }
 
-    public void setTempoEstimadoServico() {
-        this.tempoEstimadoServico = this.calcularTempoEstimadoDeServico(this.dimensao, this.nivelDePesquisa);
+    public void setTempoPesquisa(double tempoPesquisa) {
+        this.tempoPesquisa = tempoPesquisa;
+    }
+
+    public double getTempoEstimadoServico() {
+        return tempoEstimadoServico;
+    }
+
+    public void setTempoEstimadoServico(double tempoEstimadoServico) {
+        this.tempoEstimadoServico = tempoEstimadoServico;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+    
+    @Override
+    public String toString() {
+        return "Formato:" + this.dimensao + "/Nível de pesquisa:"
+                + this.getTextoNivelDePesquisa();
     }
 
 }
