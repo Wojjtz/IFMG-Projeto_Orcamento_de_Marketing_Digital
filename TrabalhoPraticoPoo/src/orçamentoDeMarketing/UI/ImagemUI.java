@@ -38,9 +38,6 @@ public class ImagemUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         txtImagem = new javax.swing.JLabel();
         txtNivelPesquisa = new javax.swing.JLabel();
-        checkBox45 = new javax.swing.JCheckBox();
-        checkBox11 = new javax.swing.JCheckBox();
-        checkBox916 = new javax.swing.JCheckBox();
         txtTamanho1 = new javax.swing.JLabel();
         checkBoxBaixo = new javax.swing.JCheckBox();
         checkBoxMedio = new javax.swing.JCheckBox();
@@ -60,9 +57,9 @@ public class ImagemUI extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        comboBoxTamanho = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(850, 650));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(850, 650));
 
@@ -80,33 +77,6 @@ public class ImagemUI extends javax.swing.JFrame {
         txtNivelPesquisa.setForeground(new java.awt.Color(255, 255, 255));
         txtNivelPesquisa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtNivelPesquisa.setText("Nível de Pesquisa:");
-
-        checkBox45.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
-        checkBox45.setForeground(new java.awt.Color(255, 255, 255));
-        checkBox45.setText("4:5");
-        checkBox45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBox45ActionPerformed(evt);
-            }
-        });
-
-        checkBox11.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
-        checkBox11.setForeground(new java.awt.Color(255, 255, 255));
-        checkBox11.setText("1:1");
-        checkBox11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBox11ActionPerformed(evt);
-            }
-        });
-
-        checkBox916.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
-        checkBox916.setForeground(new java.awt.Color(255, 255, 255));
-        checkBox916.setText("9:16");
-        checkBox916.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkBox916ActionPerformed(evt);
-            }
-        });
 
         txtTamanho1.setFont(new java.awt.Font("Noto Serif", 1, 24)); // NOI18N
         txtTamanho1.setForeground(new java.awt.Color(255, 255, 255));
@@ -274,6 +244,15 @@ public class ImagemUI extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("1920");
 
+        comboBoxTamanho.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        comboBoxTamanho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "1:1", "4:5", "9:16" }));
+        comboBoxTamanho.setToolTipText("");
+        comboBoxTamanho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxTamanhoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -287,20 +266,15 @@ public class ImagemUI extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(checkBoxAlto)
-                                    .addComponent(checkBoxMedio)
-                                    .addComponent(checkBoxBaixo))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(checkBox11)
-                                    .addGap(34, 34, 34)
-                                    .addComponent(checkBox45)
-                                    .addGap(41, 41, 41)
-                                    .addComponent(checkBox916)))
-                            .addComponent(txtTamanho1)
                             .addComponent(txtNivelPesquisa)
-                            .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(checkBoxAlto)
+                            .addComponent(checkBoxMedio)
+                            .addComponent(checkBoxBaixo)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtTamanho1)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboBoxTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -368,13 +342,10 @@ public class ImagemUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtTamanho1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(checkBox45)
-                                    .addComponent(checkBox11)
-                                    .addComponent(checkBox916))
-                                .addGap(61, 61, 61)
+                                    .addComponent(txtTamanho1)
+                                    .addComponent(comboBoxTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(56, 56, 56)
                                 .addComponent(txtNivelPesquisa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(checkBoxBaixo)
@@ -428,13 +399,10 @@ public class ImagemUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarFrameActionPerformed
 
     private void buttonAddImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddImagemActionPerformed
-        if (!checkBox11.isSelected() && !checkBox45.isSelected() && !checkBox916.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-
-        } else if ((!checkBoxAlto.isSelected() && !checkBoxBaixo.isSelected() && !checkBoxMedio.isSelected())) {
+        if (comboBoxTamanho.getSelectedItem().toString() == "-" || (!checkBoxAlto.isSelected() && !checkBoxBaixo.isSelected() && !checkBoxMedio.isSelected())) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         } else {
-            listaImagens.adicionarImagem(formatoImagem, nivelDePesquisa);
+            listaImagens.adicionarImagem(comboBoxTamanho.getSelectedItem().toString(), nivelDePesquisa);
             JOptionPane.showMessageDialog(null, "Imagem adicionada com sucesso ao carrinho! \nVolte ao início para ver o valor total.");
 
         }
@@ -464,29 +432,9 @@ public class ImagemUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkBoxBaixoActionPerformed
 
-    private void checkBox916ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox916ActionPerformed
-        formatoImagem = "9:16";
-        if (checkBox45.isSelected() || checkBox11.isSelected()) {
-            checkBox45.setSelected(false);
-            checkBox11.setSelected(false);
-        }
-    }//GEN-LAST:event_checkBox916ActionPerformed
-
-    private void checkBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox11ActionPerformed
-        formatoImagem = "1:1";
-        if (checkBox45.isSelected() || checkBox916.isSelected()) {
-            checkBox45.setSelected(false);
-            checkBox916.setSelected(false);
-        }
-    }//GEN-LAST:event_checkBox11ActionPerformed
-
-    private void checkBox45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox45ActionPerformed
-        formatoImagem = "4:5";
-        if (checkBox916.isSelected() || checkBox11.isSelected()) {
-            checkBox916.setSelected(false);
-            checkBox11.setSelected(false);
-        }
-    }//GEN-LAST:event_checkBox45ActionPerformed
+    private void comboBoxTamanhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTamanhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxTamanhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,12 +475,10 @@ public class ImagemUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAddImagem;
     private javax.swing.JButton buttonVoltarFrame;
-    private javax.swing.JCheckBox checkBox11;
-    private javax.swing.JCheckBox checkBox45;
-    private javax.swing.JCheckBox checkBox916;
     private javax.swing.JCheckBox checkBoxAlto;
     private javax.swing.JCheckBox checkBoxBaixo;
     private javax.swing.JCheckBox checkBoxMedio;
+    private javax.swing.JComboBox<String> comboBoxTamanho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
