@@ -14,29 +14,18 @@ public class TrafegoPago {
     private String nicho;
     private double valorInvestido;
 
-    public TrafegoPago(double precoFinal, String nicho, int valorInvestido) {
-        this.precoFinal = precoFinal;
-        this.nicho = nicho;
+    public TrafegoPago(double valorInvestido, String nicho) {
         this.valorInvestido = valorInvestido;
-    }
-
-    public TrafegoPago() {
-        this.precoFinal = 0;
-        this.nicho = "";
-        this.valorInvestido = 0;
+        this.nicho = nicho;
     }
 
     private double calcularPrecoFinal() {
-        this.precoFinal = this.valorInvestido * 1.35;
+        this.precoFinal = this.valorInvestido * 1.30;
         return this.precoFinal;
-    }
-    
-    public String toString(){
-        return "TRAFEGO PAGO: \n   Preço: " + this.precoFinal + "\n   Nicho: " + this.nicho;
     }
 
     public double getPrecoFinal() {
-        return precoFinal;
+        return this.calcularPrecoFinal();
     }
 
     public void setPrecoFinal() {

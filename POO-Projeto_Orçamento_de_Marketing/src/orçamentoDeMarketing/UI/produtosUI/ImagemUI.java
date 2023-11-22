@@ -465,6 +465,7 @@ public class ImagemUI extends javax.swing.JFrame {
             for (int i = 0; i < Integer.parseInt(spinnerQuantidade.getValue().toString()); i++) {
                 listaImagens.adicionar(comboBoxFormato.getSelectedItem().toString(), Integer.parseInt(buttonGroup.getSelection().getActionCommand()));
             }
+            
             JOptionPane.showMessageDialog(null, "Imagem(ns) adicionada com sucesso ao carrinho! ");
             OpcoesUI op = new OpcoesUI();
             op.setVisible(true);

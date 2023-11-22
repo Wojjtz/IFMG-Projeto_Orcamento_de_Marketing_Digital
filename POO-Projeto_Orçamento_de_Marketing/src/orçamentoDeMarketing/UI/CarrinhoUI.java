@@ -12,6 +12,7 @@ import orçamentoDeMarketing.Classes.video.Animacao;
 import orçamentoDeMarketing.Classes.video.Filmagem;
 import orçamentoDeMarketing.listas.ListaImagens;
 import orçamentoDeMarketing.listas.ListaSites;
+import orçamentoDeMarketing.listas.ListaTrafegoPago;
 import orçamentoDeMarketing.listas.ListaVideos;
 
 /**
@@ -30,12 +31,14 @@ public class CarrinhoUI extends javax.swing.JFrame {
     ListaImagens listaImagens = new ListaImagens();
     ListaVideos listaVideos = new ListaVideos();
     ListaSites listaSites = new ListaSites();
+    ListaTrafegoPago listaTrafego = new ListaTrafegoPago();
 
     private void inserirDadosNaTabela() {
         DefaultTableModel modeloTabela = (DefaultTableModel) tabelaItens.getModel();
         inserirImagens(modeloTabela);
         inserirVideos(modeloTabela);
         inserirSites(modeloTabela);
+        inserirTrafegosPagos(modeloTabela);
     }
 
     private void inserirImagens(DefaultTableModel modeloTabela) {
@@ -95,6 +98,17 @@ public class CarrinhoUI extends javax.swing.JFrame {
                 modeloTabela.addRow(dados);
 
             }
+        }
+    }
+    
+    private void inserirTrafegosPagos(DefaultTableModel modeloTabela){
+        for (int i = 0; i < listaTrafego.trafegos.size(); i++) {
+            String[] dados = {
+                "Trafego Pago",
+                "Nicho: " + listaTrafego.trafegos.get(i).getNicho() + " / Investimento: R$" + String.format("%.2f", listaTrafego.trafegos.get(i).getValorInvestido()),
+                "",
+                "R$" + String.format("%.2f", listaTrafego.trafegos.get(i).getPrecoFinal())};
+            modeloTabela.addRow(dados);
         }
     }
 
@@ -252,7 +266,7 @@ public class CarrinhoUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMostrarItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMostrarItensActionPerformed
-        if (listaImagens.imagens.isEmpty() && listaVideos.videos.isEmpty() && listaSites.sites.isEmpty()) {
+        if (listaImagens.imagens.isEmpty() && listaVideos.videos.isEmpty() && listaSites.sites.isEmpty() && listaTrafego.trafegos.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nenhum item adicionado ao carrinho.");
         } else {
             inserirDadosNaTabela();
@@ -265,11 +279,11 @@ public class CarrinhoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarPaginaMouseClicked
 
     private void buttonVoltarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseEntered
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("orçamentoDeMarketing/images/back-page-icon-entered.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon-entered.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseEntered
 
     private void buttonVoltarPaginaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseExited
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("orçamentoDeMarketing/images/back-page-icon.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseExited
 
     private void buttonVoltarPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaActionPerformed

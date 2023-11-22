@@ -4,7 +4,9 @@
  */
 package orçamentoDeMarketing.UI.produtosUI;
 
+import javax.swing.JOptionPane;
 import orçamentoDeMarketing.UI.OpcoesUI;
+import orçamentoDeMarketing.listas.ListaTrafegoPago;
 
 /**
  *
@@ -18,6 +20,8 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
     public TrafegoPagoUI() {
         initComponents();
     }
+    
+    private ListaTrafegoPago listaTrafegoPago = new ListaTrafegoPago();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +39,12 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
         txtNicho = new javax.swing.JLabel();
         comboBoxPaginas = new javax.swing.JComboBox<>();
         txtInvestimento = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtFieldValorInvestimento = new javax.swing.JTextField();
+        buttonAddImagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(850, 650));
+        setPreferredSize(new java.awt.Dimension(622, 422));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -94,7 +101,7 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
 
         comboBoxPaginas.setBackground(new java.awt.Color(255, 255, 255));
         comboBoxPaginas.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        comboBoxPaginas.setForeground(new java.awt.Color(255, 255, 255));
+        comboBoxPaginas.setForeground(new java.awt.Color(51, 51, 51));
         comboBoxPaginas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Educação", "Programação", "Saúde", "Comércio", "Vendas Online", " " }));
         comboBoxPaginas.setToolTipText("Recomenda-se no mínimo 3 para o site ser mais organizado e a navegação do site ser mais fluída.");
 
@@ -102,6 +109,26 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
         txtInvestimento.setForeground(new java.awt.Color(255, 255, 255));
         txtInvestimento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtInvestimento.setText("Investimento:");
+        txtInvestimento.setToolTipText("O valor final é acrescido em 30% do investimento para nosso ganho.");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("R$");
+
+        txtFieldValorInvestimento.setBackground(new java.awt.Color(255, 255, 255));
+        txtFieldValorInvestimento.setForeground(new java.awt.Color(51, 51, 51));
+
+        buttonAddImagem.setBackground(new java.awt.Color(237, 125, 49));
+        buttonAddImagem.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
+        buttonAddImagem.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAddImagem.setText("ADICIONAR");
+        buttonAddImagem.setBorderPainted(false);
+        buttonAddImagem.setFocusPainted(false);
+        buttonAddImagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAddImagemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,12 +143,18 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtInvestimento)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtInvestimento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFieldValorInvestimento, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtNicho)
                                 .addGap(18, 18, 18)
-                                .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 344, Short.MAX_VALUE))
+                                .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,22 +169,28 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
                     .addComponent(txtNicho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
-                .addComponent(txtInvestimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(402, 402, 402))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtInvestimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtFieldValorInvestimento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(303, 303, 303))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonVoltarPaginaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseClicked
@@ -171,6 +210,14 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
         op.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonVoltarPaginaActionPerformed
+
+    private void buttonAddImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddImagemActionPerformed
+        listaTrafegoPago.adicionar(comboBoxPaginas.getSelectedItem().toString(), Double.parseDouble(txtFieldValorInvestimento.getText()));
+        JOptionPane.showMessageDialog(null, "Trafego Pago adicionado com sucesso ao carrinho!");
+        OpcoesUI op = new OpcoesUI();
+        op.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonAddImagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,10 +255,13 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAddImagem;
     private javax.swing.JButton buttonVoltarPagina;
     private javax.swing.JComboBox<String> comboBoxPaginas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txtFieldValorInvestimento;
     private javax.swing.JLabel txtInvestimento;
     private javax.swing.JLabel txtNicho;
     private javax.swing.JLabel txtTFP;
