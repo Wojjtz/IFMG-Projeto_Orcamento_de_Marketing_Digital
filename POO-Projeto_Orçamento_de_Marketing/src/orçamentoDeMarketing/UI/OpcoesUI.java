@@ -206,7 +206,7 @@ public class OpcoesUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(97, 650));
 
         buttonVoltarPagina.setBackground(new java.awt.Color(237, 125, 49));
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png"))); // NOI18N
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png"))); // NOI18N
         buttonVoltarPagina.setBorder(null);
         buttonVoltarPagina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -286,8 +286,7 @@ public class OpcoesUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAjudaPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(buttonAjudaPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
@@ -404,11 +403,11 @@ public class OpcoesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarPaginaActionPerformed
 
     private void buttonVoltarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseEntered
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon-entered.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon-entered.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseEntered
 
     private void buttonVoltarPaginaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseExited
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseExited
 
     private void buttonVoltarPaginaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseClicked

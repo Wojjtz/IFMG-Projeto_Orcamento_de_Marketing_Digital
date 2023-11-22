@@ -46,7 +46,7 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(97, 650));
 
         buttonVoltarPagina.setBackground(new java.awt.Color(237, 125, 49));
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png"))); // NOI18N
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png"))); // NOI18N
         buttonVoltarPagina.setBorder(null);
         buttonVoltarPagina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,11 +159,11 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarPaginaMouseClicked
 
     private void buttonVoltarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseEntered
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon-entered.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon-entered.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseEntered
 
     private void buttonVoltarPaginaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseExited
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseExited
 
     private void buttonVoltarPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaActionPerformed

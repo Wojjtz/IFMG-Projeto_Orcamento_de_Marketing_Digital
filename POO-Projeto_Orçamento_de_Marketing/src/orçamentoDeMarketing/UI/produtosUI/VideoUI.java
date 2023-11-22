@@ -53,7 +53,7 @@ public class VideoUI extends javax.swing.JFrame {
         buttonAjudaTipoVideo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(850, 720));
+        setPreferredSize(new java.awt.Dimension(607, 431));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -62,7 +62,7 @@ public class VideoUI extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(237, 126, 49));
 
         buttonVoltarPagina.setBackground(new java.awt.Color(237, 125, 49));
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png"))); // NOI18N
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png"))); // NOI18N
         buttonVoltarPagina.setBorder(null);
         buttonVoltarPagina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,16 +86,16 @@ public class VideoUI extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(15, 15, 15)
                 .addComponent(buttonVoltarPagina)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(19, 19, 19)
                 .addComponent(buttonVoltarPagina)
-                .addGap(0, 0, 0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtVideo.setFont(new java.awt.Font("Noto Serif", 1, 48)); // NOI18N
@@ -171,6 +171,7 @@ public class VideoUI extends javax.swing.JFrame {
         txtQuantidade.setText("Quantidade:");
 
         spinnerQuantidade.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        spinnerQuantidade.setMinimumSize(new java.awt.Dimension(64, 30));
 
         buttonAjudaTipoVideo.setBackground(new java.awt.Color(237, 125, 49));
         buttonAjudaTipoVideo.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
@@ -192,33 +193,30 @@ public class VideoUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(txtVideo)
-                        .addGap(0, 576, Short.MAX_VALUE))
+                        .addComponent(txtVideo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtQuantidade)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtTipo)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(radioButton1)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(radioButton2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtDuracao)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtSegundos)))
+                                .addComponent(txtDuracao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSegundos))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtQuantidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtTipo)
+                                .addGap(29, 29, 29)
+                                .addComponent(radioButton1)
+                                .addGap(27, 27, 27)
+                                .addComponent(radioButton2)
                                 .addGap(33, 33, 33)
                                 .addComponent(buttonAjudaTipoVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(buttonAddVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(buttonAddVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 66, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,24 +224,24 @@ public class VideoUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtVideo)
-                .addGap(72, 72, 72)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtQuantidade)
-                    .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                    .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTipo)
                     .addComponent(radioButton1)
                     .addComponent(radioButton2)
                     .addComponent(buttonAjudaTipoVideo))
-                .addGap(48, 48, 48)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDuracao)
                     .addComponent(txtSegundos)
                     .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addComponent(buttonAddVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -266,11 +264,11 @@ public class VideoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarPaginaMouseClicked
 
     private void buttonVoltarPaginaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseEntered
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon-entered.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon-entered.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseEntered
 
     private void buttonVoltarPaginaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseExited
-        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-page-icon.png")));
+        buttonVoltarPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/orçamentoDeMarketing/images/back-page-icon.png")));
     }//GEN-LAST:event_buttonVoltarPaginaMouseExited
 
     private void buttonVoltarPaginaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaActionPerformed
