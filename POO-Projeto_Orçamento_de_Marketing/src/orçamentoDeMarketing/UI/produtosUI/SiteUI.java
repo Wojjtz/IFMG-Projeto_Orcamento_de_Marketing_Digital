@@ -122,7 +122,7 @@ public class SiteUI extends javax.swing.JFrame {
 
         radioButton1.setBackground(new java.awt.Color(51, 51, 51));
         buttonGroup.add(radioButton1);
-        radioButton1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        radioButton1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         radioButton1.setForeground(java.awt.Color.white);
         radioButton1.setText("Institucional");
         radioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +133,7 @@ public class SiteUI extends javax.swing.JFrame {
 
         radioButton2.setBackground(new java.awt.Color(51, 51, 51));
         buttonGroup.add(radioButton2);
-        radioButton2.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        radioButton2.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         radioButton2.setForeground(java.awt.Color.white);
         radioButton2.setText("Loja");
         radioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -147,9 +147,9 @@ public class SiteUI extends javax.swing.JFrame {
         txtTipo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTipo1.setText("Qual o tipo do seu site?");
 
-        comboBoxPaginas.setBackground(new java.awt.Color(102, 102, 102));
+        comboBoxPaginas.setBackground(new java.awt.Color(255, 255, 255));
         comboBoxPaginas.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        comboBoxPaginas.setForeground(new java.awt.Color(255, 255, 255));
+        comboBoxPaginas.setForeground(new java.awt.Color(51, 51, 51));
         comboBoxPaginas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "3", "4", "5", "6", "7", "8" }));
         comboBoxPaginas.setToolTipText("Recomenda-se no mínimo 3 para o site ser mais organizado e a navegação do site ser mais fluída.");
 
@@ -183,6 +183,7 @@ public class SiteUI extends javax.swing.JFrame {
         });
 
         spinnerQntdProdutos.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        spinnerQntdProdutos.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -192,39 +193,35 @@ public class SiteUI extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSite)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(76, 76, 76)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtTipo1)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonAjudaTipoSite, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtQuantidadePaginas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtNumProdutos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(spinnerQntdProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonAjudaNumProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(253, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtTipo1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(buttonAjudaTipoSite, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(42, 42, 42)
-                                        .addComponent(radioButton1)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(radioButton2))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtNumProdutos)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(202, 202, 202)
-                                                .addComponent(spinnerQntdProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(buttonAjudaNumProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtQuantidadePaginas)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(txtSite))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(253, Short.MAX_VALUE))))
+                                .addGap(130, 130, 130)
+                                .addComponent(radioButton1)
+                                .addGap(27, 27, 27)
+                                .addComponent(radioButton2)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,22 +232,23 @@ public class SiteUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(txtSite)
                 .addGap(61, 61, 61)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTipo1)
-                    .addComponent(buttonAjudaTipoSite))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(buttonAjudaTipoSite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTipo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioButton1)
                     .addComponent(radioButton2))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtQuantidadePaginas)
+                    .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(comboBoxPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQuantidadePaginas))
-                .addGap(63, 63, 63)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNumProdutos)
-                    .addComponent(buttonAjudaNumProdutos)
-                    .addComponent(spinnerQntdProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(spinnerQntdProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(buttonAjudaNumProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonAddImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))

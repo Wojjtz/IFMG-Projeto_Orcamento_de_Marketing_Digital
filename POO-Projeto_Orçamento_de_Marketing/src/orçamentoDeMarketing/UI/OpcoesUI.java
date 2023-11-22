@@ -5,8 +5,10 @@
 package orçamentoDeMarketing.UI;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import orçamentoDeMarketing.UI.produtosUI.ImagemUI;
 import orçamentoDeMarketing.UI.produtosUI.SiteUI;
+import orçamentoDeMarketing.UI.produtosUI.TrafegoPagoUI;
 import orçamentoDeMarketing.UI.produtosUI.VideoUI;
 
 /**
@@ -304,7 +306,7 @@ public class OpcoesUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAjudaTrafego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAjudaTrafego1ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"");
     }//GEN-LAST:event_buttonAjudaTrafego1ActionPerformed
 
     private void buttonAjudaPSMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAjudaPSMActionPerformed
@@ -322,7 +324,9 @@ public class OpcoesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSiteActionPerformed
 
     private void buttonTrafegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrafegoActionPerformed
-        // TODO add your handling code here:
+        TrafegoPagoUI tf = new TrafegoPagoUI();
+        tf.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_buttonTrafegoActionPerformed
 
     private void buttonImagemFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonImagemFotoActionPerformed

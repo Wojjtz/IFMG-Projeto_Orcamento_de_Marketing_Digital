@@ -3,17 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/Classes/abstracts/Site.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/UI/CarrinhoUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/listas/ListaVideos.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/UI/produtosUI/SiteUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/Classes/abstracts/Video.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/UI/produtosUI/VideoUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/listas/ListaSites.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/Classes/newClasses/site/Institucional.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/UI/OpcoesUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/Classes/newClasses/site/Loja.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/TrabalhoPraticoPoo/src/orçamentoDeMarketing/UI/produtosUI/ImagemUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/OpcoesUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/produtosUI/VideoUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/PrincipalUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/produtosUI/TrafegoPagoUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/produtosUI/SiteUI.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/IFMG/POO-TrabalhoPratico/POO-Projeto_Orçamento_de_Marketing/src/orçamentoDeMarketing/UI/produtosUI/ImagemUI.java</file>
         </group>
     </open-files>
 </project-private>
