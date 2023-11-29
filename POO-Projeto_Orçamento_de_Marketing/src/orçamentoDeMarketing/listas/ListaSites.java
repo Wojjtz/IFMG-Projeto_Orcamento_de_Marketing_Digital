@@ -6,7 +6,7 @@ package orçamentoDeMarketing.listas;
 
 import java.util.ArrayList;
 import java.util.List;
-import orçamentoDeMarketing.Classes.abstracts.Site;
+import orçamentoDeMarketing.model.abstracts.Site;
 
 /**
  *

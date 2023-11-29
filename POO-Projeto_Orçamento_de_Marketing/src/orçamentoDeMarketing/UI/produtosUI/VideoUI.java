@@ -6,9 +6,9 @@ package orçamentoDeMarketing.UI.produtosUI;
 
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
-import orçamentoDeMarketing.Classes.video.Animacao;
-import orçamentoDeMarketing.Classes.video.Filmagem;
-import orçamentoDeMarketing.UI.OpcoesUI;
+import orçamentoDeMarketing.model.video.Animacao;
+import orçamentoDeMarketing.model.video.Filmagem;
+import orçamentoDeMarketing.UI.opcoes.OpcoesUI;
 import orçamentoDeMarketing.listas.ListaVideos;
 
 /**
@@ -41,19 +41,20 @@ public class VideoUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         buttonVoltarPagina = new javax.swing.JButton();
         txtVideo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        txtQuantidade = new javax.swing.JLabel();
+        spinnerQuantidade = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JLabel();
         radioButton1 = new javax.swing.JRadioButton();
         radioButton2 = new javax.swing.JRadioButton();
-        txtDuracao = new javax.swing.JLabel();
-        txtSegundos = new javax.swing.JLabel();
-        formattedTxtFieldSegundos = new javax.swing.JFormattedTextField();
-        buttonAddVideo = new javax.swing.JButton();
-        txtQuantidade = new javax.swing.JLabel();
-        spinnerQuantidade = new javax.swing.JSpinner();
         buttonAjudaTipoVideo = new javax.swing.JButton();
+        txtDuracao = new javax.swing.JLabel();
+        formattedTxtFieldSegundos = new javax.swing.JFormattedTextField();
+        txtSegundos = new javax.swing.JLabel();
+        buttonAddVideo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(607, 431));
+        setPreferredSize(new java.awt.Dimension(563, 365));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -103,18 +104,28 @@ public class VideoUI extends javax.swing.JFrame {
         txtVideo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtVideo.setText("VÍDEO");
 
+        jPanel3.setBackground(new java.awt.Color(60, 60, 60));
+
+        txtQuantidade.setFont(new java.awt.Font("Noto Serif", 1, 24)); // NOI18N
+        txtQuantidade.setForeground(new java.awt.Color(255, 255, 255));
+        txtQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtQuantidade.setText("Quantidade:");
+
+        spinnerQuantidade.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        spinnerQuantidade.setMinimumSize(new java.awt.Dimension(64, 30));
+
         txtTipo.setFont(new java.awt.Font("Noto Serif", 1, 24)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(255, 255, 255));
         txtTipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTipo.setText("Tipo:");
 
-        radioButton1.setBackground(new java.awt.Color(51, 51, 51));
+        radioButton1.setBackground(new java.awt.Color(60, 60, 60));
         buttonGroup.add(radioButton1);
         radioButton1.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         radioButton1.setForeground(java.awt.Color.white);
         radioButton1.setText("Filmagem");
 
-        radioButton2.setBackground(new java.awt.Color(51, 51, 51));
+        radioButton2.setBackground(new java.awt.Color(60, 60, 60));
         buttonGroup.add(radioButton2);
         radioButton2.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         radioButton2.setForeground(java.awt.Color.white);
@@ -125,13 +136,21 @@ public class VideoUI extends javax.swing.JFrame {
             }
         });
 
+        buttonAjudaTipoVideo.setBackground(new java.awt.Color(237, 125, 49));
+        buttonAjudaTipoVideo.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        buttonAjudaTipoVideo.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAjudaTipoVideo.setText("?");
+        buttonAjudaTipoVideo.setBorder(null);
+        buttonAjudaTipoVideo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAjudaTipoVideoActionPerformed(evt);
+            }
+        });
+
         txtDuracao.setFont(new java.awt.Font("Noto Serif", 1, 24)); // NOI18N
         txtDuracao.setForeground(new java.awt.Color(255, 255, 255));
         txtDuracao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtDuracao.setText("Duração: ");
-
-        txtSegundos.setForeground(new java.awt.Color(255, 255, 255));
-        txtSegundos.setText("segundos");
 
         formattedTxtFieldSegundos.setBackground(new java.awt.Color(102, 102, 102));
         formattedTxtFieldSegundos.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,6 +172,57 @@ public class VideoUI extends javax.swing.JFrame {
             }
         });
 
+        txtSegundos.setForeground(new java.awt.Color(255, 255, 255));
+        txtSegundos.setText("segundos");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtDuracao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSegundos))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtTipo)
+                        .addGap(29, 29, 29)
+                        .addComponent(radioButton1)
+                        .addGap(27, 27, 27)
+                        .addComponent(radioButton2)
+                        .addGap(33, 33, 33)
+                        .addComponent(buttonAjudaTipoVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(txtQuantidade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtQuantidade)
+                    .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTipo)
+                    .addComponent(radioButton1)
+                    .addComponent(radioButton2)
+                    .addComponent(buttonAjudaTipoVideo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDuracao)
+                    .addComponent(txtSegundos)
+                    .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
         buttonAddVideo.setBackground(new java.awt.Color(237, 125, 49));
         buttonAddVideo.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
         buttonAddVideo.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,58 +235,18 @@ public class VideoUI extends javax.swing.JFrame {
             }
         });
 
-        txtQuantidade.setFont(new java.awt.Font("Noto Serif", 1, 24)); // NOI18N
-        txtQuantidade.setForeground(new java.awt.Color(255, 255, 255));
-        txtQuantidade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtQuantidade.setText("Quantidade:");
-
-        spinnerQuantidade.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        spinnerQuantidade.setMinimumSize(new java.awt.Dimension(64, 30));
-
-        buttonAjudaTipoVideo.setBackground(new java.awt.Color(237, 125, 49));
-        buttonAjudaTipoVideo.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        buttonAjudaTipoVideo.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAjudaTipoVideo.setText("?");
-        buttonAjudaTipoVideo.setBorder(null);
-        buttonAjudaTipoVideo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAjudaTipoVideoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVideo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtDuracao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSegundos))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtQuantidade)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTipo)
-                                .addGap(29, 29, 29)
-                                .addComponent(radioButton1)
-                                .addGap(27, 27, 27)
-                                .addComponent(radioButton2)
-                                .addGap(33, 33, 33)
-                                .addComponent(buttonAjudaTipoVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(buttonAddVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 66, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtVideo)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonAddVideo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,24 +254,11 @@ public class VideoUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtVideo)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtQuantidade)
-                    .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTipo)
-                    .addComponent(radioButton1)
-                    .addComponent(radioButton2)
-                    .addComponent(buttonAjudaTipoVideo))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDuracao)
-                    .addComponent(txtSegundos)
-                    .addComponent(formattedTxtFieldSegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonAddVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -358,6 +375,7 @@ public class VideoUI extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formattedTxtFieldSegundos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton radioButton1;
     private javax.swing.JRadioButton radioButton2;
     private javax.swing.JSpinner spinnerQuantidade;

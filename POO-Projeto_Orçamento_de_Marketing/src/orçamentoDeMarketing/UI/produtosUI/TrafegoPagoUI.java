@@ -5,7 +5,7 @@
 package orçamentoDeMarketing.UI.produtosUI;
 
 import javax.swing.JOptionPane;
-import orçamentoDeMarketing.UI.OpcoesUI;
+import orçamentoDeMarketing.UI.opcoes.OpcoesUI;
 import orçamentoDeMarketing.listas.ListaTrafegoPago;
 
 /**
