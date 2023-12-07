@@ -4,7 +4,7 @@
  */
 package orçamentoDeMarketing.model.video;
 
-import orçamentoDeMarketing.model.abstracts.Video;
+import orçamentoDeMarketing.abstracts.Video;
 
 /**
  *

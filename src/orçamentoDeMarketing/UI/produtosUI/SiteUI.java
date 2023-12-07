@@ -6,7 +6,7 @@ package orçamentoDeMarketing.UI.produtosUI;
 
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
-import orçamentoDeMarketing.model.abstracts.Site;
+import orçamentoDeMarketing.abstracts.Site;
 import orçamentoDeMarketing.model.site.Institucional;
 import orçamentoDeMarketing.model.site.Loja;
 import orçamentoDeMarketing.UI.opcoes.OpcoesUI;

@@ -7,7 +7,7 @@ package orçamentoDeMarketing.UI.carrinho;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import orçamentoDeMarketing.UI.main.PrincipalUI;
-import orçamentoDeMarketing.model.abstracts.Video;
+import orçamentoDeMarketing.abstracts.Video;
 import orçamentoDeMarketing.model.site.Institucional;
 import orçamentoDeMarketing.model.site.Loja;
 import orçamentoDeMarketing.model.video.Animacao;

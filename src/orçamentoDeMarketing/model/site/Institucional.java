@@ -4,7 +4,7 @@
  */
 package orçamentoDeMarketing.model.site;
 
-import orçamentoDeMarketing.model.abstracts.Site;
+import orçamentoDeMarketing.abstracts.Site;
 
 /**
  *
