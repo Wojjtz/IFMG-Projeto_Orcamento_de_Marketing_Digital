@@ -70,6 +70,4 @@ public abstract class Video {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
 }
