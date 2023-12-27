@@ -3,18 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/abstracts/Video.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/produtosUI/TrafegoPagoUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/model/video/Filmagem.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/images/back-page-icon-entered.png</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/main/PrincipalUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/opcoes/OpcoesUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/carrinho/CarrinhoUI.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/model/site/Loja.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/model/site/Institucional.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/abstracts/Site.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/model/video/Animacao.java</file>
-            <file>file:/D:/Área%20de%20Trabalho/IFMG/Repositorios%20do%20GitHub/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/interfaces/Produto.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/CarrinhoUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/VideoUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/OpcoesUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/classes/model/site/Loja.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/PrincipalUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/ImagemUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/TrafegoPagoUI.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/classes/model/video/Filmagem.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/classes/abstracts/Site.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/classes/interfaces/Produto.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/PacoteSM.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/classes/model/video/Animacao.java</file>
+            <file>file:/C:/Users/rodol/Área%20de%20Trabalho/Repositórios%20Git/IFMG-Projeto_Orcamento_de_Marketing_Digital/src/orçamentoDeMarketing/UI/SiteUI.java</file>
         </group>
     </open-files>
 </project-private>

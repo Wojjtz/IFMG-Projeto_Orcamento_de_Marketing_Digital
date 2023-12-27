@@ -5,7 +5,7 @@
 package orçamentoDeMarketing.listas;
 
 import java.util.ArrayList;
-import orçamentoDeMarketing.model.trafegoPago.TrafegoPago;
+import orçamentoDeMarketing.classes.model.trafegoPago.TrafegoPago;
 
 /**
  *
