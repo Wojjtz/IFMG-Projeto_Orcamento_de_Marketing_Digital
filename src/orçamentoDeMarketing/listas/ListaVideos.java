@@ -15,8 +15,8 @@ import orçamentoDeMarketing.classes.abstracts.Video;
 public class ListaVideos {
     public static ArrayList<Video> videos = new ArrayList<Video>();
 
-    public void adicionar(Video video, String tipo) {
-        video.setTipo(tipo);
+    public void adicionar(Video video) {
+        
         videos.add(video);
     }
 

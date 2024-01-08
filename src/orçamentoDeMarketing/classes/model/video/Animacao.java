@@ -12,8 +12,8 @@ import orçamentoDeMarketing.classes.abstracts.Video;
  */
 public class Animacao extends Video {
 
-    public Animacao(double duracao) {
-        super(duracao);
+    public Animacao(double duracao, String tipo) {
+        super(duracao, tipo);
     }
 
     @Override

@@ -4,6 +4,7 @@
  */
 package orçamentoDeMarketing.UI;
 
+import orçamentoDeMarketing.UI.PacoteSocialMediaUI.PacoteSM;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -41,7 +42,6 @@ public class OpcoesUI extends javax.swing.JFrame {
         buttonTrafego = new javax.swing.JButton();
         buttonPSM = new javax.swing.JButton();
         buttonAjudaTrafego1 = new javax.swing.JButton();
-        buttonAjudaPSM = new javax.swing.JButton();
         txtOpcoes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -209,26 +209,6 @@ public class OpcoesUI extends javax.swing.JFrame {
             }
         });
 
-        buttonAjudaPSM.setBackground(new java.awt.Color(237, 125, 49));
-        buttonAjudaPSM.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
-        buttonAjudaPSM.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAjudaPSM.setText("?");
-        buttonAjudaPSM.setBorderPainted(false);
-        buttonAjudaPSM.setFocusPainted(false);
-        buttonAjudaPSM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonAjudaPSMMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonAjudaPSMMouseExited(evt);
-            }
-        });
-        buttonAjudaPSM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAjudaPSMActionPerformed(evt);
-            }
-        });
-
         txtOpcoes.setFont(new java.awt.Font("Noto Serif", 1, 48)); // NOI18N
         txtOpcoes.setForeground(new java.awt.Color(237, 125, 49));
         txtOpcoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -251,13 +231,12 @@ public class OpcoesUI extends javax.swing.JFrame {
                             .addComponent(buttonImagemFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buttonSite, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(buttonTrafego, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(buttonPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(buttonTrafego, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(buttonAjudaPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(buttonAjudaTrafego1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(buttonAjudaTrafego1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(buttonPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 146, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -279,9 +258,7 @@ public class OpcoesUI extends javax.swing.JFrame {
                     .addComponent(buttonTrafego, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonAjudaTrafego1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAjudaPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(buttonPSM, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -403,19 +380,6 @@ public class OpcoesUI extends javax.swing.JFrame {
                 + "\nmais de visitantes para sua página na internet.");
     }//GEN-LAST:event_buttonAjudaTrafego1ActionPerformed
 
-    private void buttonAjudaPSMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAjudaPSMMouseEntered
-        buttonAjudaPSM.setBackground(laranjaClaro);
-    }//GEN-LAST:event_buttonAjudaPSMMouseEntered
-
-    private void buttonAjudaPSMMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAjudaPSMMouseExited
-        buttonAjudaPSM.setBackground(laranjaPadrao);
-    }//GEN-LAST:event_buttonAjudaPSMMouseExited
-
-    private void buttonAjudaPSMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAjudaPSMActionPerformed
-        JOptionPane.showMessageDialog(null, "O Pacote Social Media contém:"
-                + "\n - ");
-    }//GEN-LAST:event_buttonAjudaPSMActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -452,7 +416,6 @@ public class OpcoesUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonAjudaPSM;
     private javax.swing.JButton buttonAjudaTrafego1;
     private javax.swing.JButton buttonImagemFoto;
     private javax.swing.JButton buttonPSM;

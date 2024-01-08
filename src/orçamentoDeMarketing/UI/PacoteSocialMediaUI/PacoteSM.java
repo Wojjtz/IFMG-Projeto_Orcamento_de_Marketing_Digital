@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package orçamentoDeMarketing.UI;
+package orçamentoDeMarketing.UI.PacoteSocialMediaUI;
+
+import javax.swing.JOptionPane;
+import orçamentoDeMarketing.UI.OpcoesUI;
 
 /**
  *
@@ -30,6 +33,10 @@ public class PacoteSM extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         buttonVoltarPagina = new javax.swing.JButton();
         txtCarrinho = new javax.swing.JLabel();
+        buttonAddStardard = new javax.swing.JButton();
+        buttonAddPlus = new javax.swing.JButton();
+        buttonInfoStandard = new javax.swing.JButton();
+        buttonInfoPlus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,15 +88,74 @@ public class PacoteSM extends javax.swing.JFrame {
         txtCarrinho.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCarrinho.setText("PACOTE SOCIAL MEDIA");
 
+        buttonAddStardard.setBackground(new java.awt.Color(237, 125, 49));
+        buttonAddStardard.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
+        buttonAddStardard.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAddStardard.setText("Standard");
+        buttonAddStardard.setBorderPainted(false);
+        buttonAddStardard.setFocusPainted(false);
+        buttonAddStardard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAddStardardActionPerformed(evt);
+            }
+        });
+
+        buttonAddPlus.setBackground(new java.awt.Color(237, 125, 49));
+        buttonAddPlus.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
+        buttonAddPlus.setForeground(new java.awt.Color(255, 255, 255));
+        buttonAddPlus.setText("Plus");
+        buttonAddPlus.setBorderPainted(false);
+        buttonAddPlus.setFocusPainted(false);
+        buttonAddPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAddPlusActionPerformed(evt);
+            }
+        });
+
+        buttonInfoStandard.setBackground(new java.awt.Color(237, 125, 49));
+        buttonInfoStandard.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
+        buttonInfoStandard.setForeground(new java.awt.Color(255, 255, 255));
+        buttonInfoStandard.setText("?");
+        buttonInfoStandard.setBorderPainted(false);
+        buttonInfoStandard.setFocusPainted(false);
+        buttonInfoStandard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInfoStandardActionPerformed(evt);
+            }
+        });
+
+        buttonInfoPlus.setBackground(new java.awt.Color(237, 125, 49));
+        buttonInfoPlus.setFont(new java.awt.Font("Noto Serif", 1, 18)); // NOI18N
+        buttonInfoPlus.setForeground(new java.awt.Color(255, 255, 255));
+        buttonInfoPlus.setText("?");
+        buttonInfoPlus.setBorderPainted(false);
+        buttonInfoPlus.setFocusPainted(false);
+        buttonInfoPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInfoPlusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtCarrinho)
-                .addGap(0, 109, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCarrinho))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonAddPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonAddStardard, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonInfoStandard, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonInfoPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 96, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,6 +165,14 @@ public class PacoteSM extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(txtCarrinho)
+                .addGap(119, 119, 119)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAddStardard, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonInfoStandard, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAddPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonInfoPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -134,6 +208,42 @@ public class PacoteSM extends javax.swing.JFrame {
         op.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonVoltarPaginaActionPerformed
+
+    private void buttonAddStardardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddStardardActionPerformed
+        PSM_Standard st = new PSM_Standard();
+        st.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonAddStardardActionPerformed
+
+    private void buttonAddPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddPlusActionPerformed
+        PSM_Plus pl = new PSM_Plus();
+        pl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonAddPlusActionPerformed
+
+    private void buttonInfoStandardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInfoStandardActionPerformed
+        JOptionPane.showMessageDialog(null, "Itens no Pacote Standard: \n"
+                + "\n2 Imagens 1:1"
+                + "\n2 Imagens 4:5"
+                + "\n2 Imagens 9:16"
+                + "\n1 Animação de 30 segundos"
+                + "\n1 Filmagem 60 segundos"
+                + "\n1 Site Institucional ou Loja de 6 páginas"
+                + "\n-10% do valor cobrado pelo Tráfego Pago"
+                + "\n\nDisconto no valor total do pacote: 15%");
+    }//GEN-LAST:event_buttonInfoStandardActionPerformed
+
+    private void buttonInfoPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInfoPlusActionPerformed
+        JOptionPane.showMessageDialog(null, "Itens no Pacote Standard: \n"
+                + "\n4 Imagens 1:1"
+                + "\n4 Imagens 4:5"
+                + "\n4 Imagens 9:16"
+                + "\n2 Animação de 30 segundos"
+                + "\n2 Filmagem 60 segundos"
+                + "\n1 Site Institucional ou Loja de 10 páginas"
+                + "\n-15% do valor cobrado pelo Tráfego Pago"
+                + "\n\nDisconto no valor total do pacote: 20%");
+    }//GEN-LAST:event_buttonInfoPlusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,6 +281,10 @@ public class PacoteSM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonAddPlus;
+    private javax.swing.JButton buttonAddStardard;
+    private javax.swing.JButton buttonInfoPlus;
+    private javax.swing.JButton buttonInfoStandard;
     private javax.swing.JButton buttonVoltarPagina;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

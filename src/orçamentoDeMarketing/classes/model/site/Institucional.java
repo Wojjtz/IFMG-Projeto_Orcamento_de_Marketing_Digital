@@ -25,5 +25,4 @@ public class Institucional extends Site {
     public double calcularTempoEstimadoServico() {
         return (paginas * 3);
     }
-
 }

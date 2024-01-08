@@ -10,6 +10,7 @@ import orçamentoDeMarketing.classes.abstracts.Video;
 import orçamentoDeMarketing.classes.model.site.Institucional;
 import orçamentoDeMarketing.classes.model.site.Loja;
 import orçamentoDeMarketing.listas.ListaImagens;
+import orçamentoDeMarketing.listas.ListaPSM;
 import orçamentoDeMarketing.listas.ListaSites;
 import orçamentoDeMarketing.listas.ListaTrafegoPago;
 import orçamentoDeMarketing.listas.ListaVideos;
@@ -31,6 +32,7 @@ public class CarrinhoUI extends javax.swing.JFrame {
     ListaVideos listaVideos = new ListaVideos();
     ListaSites listaSites = new ListaSites();
     ListaTrafegoPago listaTrafego = new ListaTrafegoPago();
+    ListaPSM listaPacotes = new ListaPSM();
 
     private void inserirDadosNaTabela() {
         DefaultTableModel modeloTabela = (DefaultTableModel) tabelaItens.getModel();
@@ -38,6 +40,7 @@ public class CarrinhoUI extends javax.swing.JFrame {
         inserirVideos(modeloTabela);
         inserirSites(modeloTabela);
         inserirTrafegosPagos(modeloTabela);
+        inserirPacotes(modeloTabela);
     }
 
     private void inserirImagens(DefaultTableModel modeloTabela) {
@@ -98,6 +101,25 @@ public class CarrinhoUI extends javax.swing.JFrame {
         }
     }
 
+    private void inserirPacotes(DefaultTableModel modeloTabela) {
+        for (int i = 0; i < listaPacotes.pacotes.size(); i++) {
+            String[] dados = {
+                "Pacote Social Media",
+                "Tipo: " + listaPacotes.pacotes.get(i).getTipo(),
+                "",
+                "R$" + String.format("%.2f", listaPacotes.pacotes.get(i).getPreco())};
+            modeloTabela.addRow(dados);
+        }
+    }
+
+    private double somarValores() {
+        double precoTotal = 0;
+
+        precoTotal = listaImagens.calcularPrecoTotal() + listaVideos.calcularPrecoTotal() + listaSites.calcularPrecoTotal() + listaTrafego.calcularPrecoTotal() + listaPacotes.calcularPrecoTotal();
+
+        return precoTotal;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -116,6 +138,9 @@ public class CarrinhoUI extends javax.swing.JFrame {
         buttonMostrarItens = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         buttonVoltarPagina = new javax.swing.JButton();
+        txtPrecoTotal = new javax.swing.JTextField();
+        bttnSomar = new javax.swing.JButton();
+        buttonMostrarItens2 = new javax.swing.JButton();
 
         jScrollPane2.setViewportView(jEditorPane1);
 
@@ -216,19 +241,53 @@ public class CarrinhoUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        txtPrecoTotal.setText("R$0.00");
+        txtPrecoTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecoTotalActionPerformed(evt);
+            }
+        });
+
+        bttnSomar.setBackground(new java.awt.Color(237, 125, 49));
+        bttnSomar.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        bttnSomar.setForeground(new java.awt.Color(255, 255, 255));
+        bttnSomar.setText("Somar");
+        bttnSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttnSomarActionPerformed(evt);
+            }
+        });
+
+        buttonMostrarItens2.setBackground(new java.awt.Color(237, 125, 49));
+        buttonMostrarItens2.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        buttonMostrarItens2.setForeground(new java.awt.Color(255, 255, 255));
+        buttonMostrarItens2.setText("Finalizar");
+        buttonMostrarItens2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMostrarItens2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonMostrarItens, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCarrinho)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCarrinho)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(buttonMostrarItens2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(bttnSomar)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtPrecoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonMostrarItens, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -237,10 +296,17 @@ public class CarrinhoUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(txtCarrinho)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buttonMostrarItens)
-                .addGap(0, 28, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonMostrarItens)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bttnSomar)
+                            .addComponent(txtPrecoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonMostrarItens2)))
+                .addGap(57, 108, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -259,7 +325,7 @@ public class CarrinhoUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMostrarItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMostrarItensActionPerformed
-        if (listaImagens.imagens.isEmpty() && listaVideos.videos.isEmpty() && listaSites.sites.isEmpty() && listaTrafego.trafegos.isEmpty()) {
+        if (listaImagens.imagens.isEmpty() && listaVideos.videos.isEmpty() && listaSites.sites.isEmpty() && listaTrafego.trafegos.isEmpty() && listaPacotes.pacotes.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nenhum item adicionado ao carrinho.");
         } else {
             inserirDadosNaTabela();
@@ -284,6 +350,26 @@ public class CarrinhoUI extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonVoltarPaginaActionPerformed
+
+    private void bttnSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnSomarActionPerformed
+        txtPrecoTotal.setText("R$" + String.format("%.2f", somarValores()));
+    }//GEN-LAST:event_bttnSomarActionPerformed
+
+    private void txtPrecoTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecoTotalActionPerformed
+
+    private void buttonMostrarItens2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMostrarItens2ActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Deseja finalizar sua compra?"
+                + "\nValor total: R$" + String.format("%.2f", somarValores())) == 0) {
+            JOptionPane.showMessageDialog(null, "Compra finalizada. Obrigado pela preferência!");
+            PrincipalUI menu = new PrincipalUI();
+            menu.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Compra cancelada.");
+        }
+    }//GEN-LAST:event_buttonMostrarItens2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,7 +418,9 @@ public class CarrinhoUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bttnSomar;
     private javax.swing.JButton buttonMostrarItens;
+    private javax.swing.JButton buttonMostrarItens2;
     private javax.swing.JButton buttonVoltarPagina;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JPanel jPanel2;
@@ -341,5 +429,6 @@ public class CarrinhoUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabelaItens;
     private javax.swing.JLabel txtCarrinho;
+    private javax.swing.JTextField txtPrecoTotal;
     // End of variables declaration//GEN-END:variables
 }

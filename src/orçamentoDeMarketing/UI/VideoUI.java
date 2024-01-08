@@ -152,11 +152,7 @@ public class VideoUI extends javax.swing.JFrame {
 
         formattedTxtFieldSegundos.setBackground(new java.awt.Color(102, 102, 102));
         formattedTxtFieldSegundos.setForeground(new java.awt.Color(255, 255, 255));
-        try {
-            formattedTxtFieldSegundos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        formattedTxtFieldSegundos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         formattedTxtFieldSegundos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         formattedTxtFieldSegundos.setName(""); // NOI18N
         formattedTxtFieldSegundos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -307,20 +303,30 @@ public class VideoUI extends javax.swing.JFrame {
     private void buttonAddVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddVideoActionPerformed
         radioButton1.setActionCommand("1");
         radioButton2.setActionCommand("2");
-        if (buttonGroup.getSelection() == null || formattedTxtFieldSegundos.getValue() == null) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-        } else {
-            for (int i = 0; i < Integer.parseInt(spinnerQuantidade.getValue().toString()); i++) {
-                if (radioButton1.isSelected()) {
-                    listaVideos.adicionar(new Filmagem(Double.parseDouble(formattedTxtFieldSegundos.getText())), "filmagem");
-                } else {
-                    listaVideos.adicionar(new Animacao(Double.parseDouble(formattedTxtFieldSegundos.getText())), "animação");
-                }
+        double segundos = Double.parseDouble(formattedTxtFieldSegundos.getText());
+        try {
+            if(segundos < 0 || segundos > 90){
+                throw new NumberFormatException();
             }
-            JOptionPane.showMessageDialog(null, "Vídeo(s) adicionada com sucesso ao carrinho! ");
-            OpcoesUI op = new OpcoesUI();
-            op.setVisible(true);
-            this.dispose();
+            if (buttonGroup.getSelection() == null || formattedTxtFieldSegundos.getValue() == null) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+            } else {
+                for (int i = 0; i < Integer.parseInt(spinnerQuantidade.getValue().toString()); i++) {
+                    if (radioButton1.isSelected()) {
+                        listaVideos.adicionar(new Filmagem(segundos,"filmagem"));
+                    } else {
+                        listaVideos.adicionar(new Animacao(segundos,"animação"));
+                    }
+                }
+                JOptionPane.showMessageDialog(null, "Vídeo(s) adicionada com sucesso ao carrinho! ");
+                OpcoesUI op = new OpcoesUI();
+                op.setVisible(true);
+                this.dispose();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Apenas números positivos e menores que 90 são aceitos no campo 'Duração'");
+        }finally{
+            formattedTxtFieldSegundos.setText("");
         }
     }//GEN-LAST:event_buttonAddVideoActionPerformed
 

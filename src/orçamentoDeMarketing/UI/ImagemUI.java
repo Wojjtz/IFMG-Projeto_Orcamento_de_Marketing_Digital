@@ -14,8 +14,6 @@ import orçamentoDeMarketing.listas.ListaImagens;
  */
 public class ImagemUI extends javax.swing.JFrame {
 
-    private int nivelDePesquisa;
-    private String formatoImagem;
     private ListaImagens listaImagens = new ListaImagens();
 
     /**
@@ -219,7 +217,9 @@ public class ImagemUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtImagem)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtImagem)
+                        .addGap(131, 131, 131))
                     .addComponent(buttonAddImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -263,18 +263,24 @@ public class ImagemUI extends javax.swing.JFrame {
         radioButton1.setActionCommand("1");
         radioButton2.setActionCommand("2");
         radioButton3.setActionCommand("3");
-        if (Integer.parseInt(spinnerQuantidade.getValue().toString()) == 0 || comboBoxFormato.getSelectedItem().toString() == "-" || buttonGroup.getSelection() == null) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-        } else {
-            for (int i = 0; i < Integer.parseInt(spinnerQuantidade.getValue().toString()); i++) {
-                listaImagens.adicionar(comboBoxFormato.getSelectedItem().toString(), Integer.parseInt(buttonGroup.getSelection().getActionCommand()));
+
+        try {
+            if (Integer.parseInt(spinnerQuantidade.getValue().toString()) == 0 || comboBoxFormato.getSelectedItem().toString() == "-" || buttonGroup.getSelection() == null) {
+                throw new NullPointerException();
+            } else {
+                for (int i = 0; i < Integer.parseInt(spinnerQuantidade.getValue().toString()); i++) {
+                    listaImagens.adicionar(comboBoxFormato.getSelectedItem().toString(), Integer.parseInt(buttonGroup.getSelection().getActionCommand()));
+                }
+                JOptionPane.showMessageDialog(null, "Imagem(ns) adicionada com sucesso ao carrinho! ");
+
             }
-            
-            JOptionPane.showMessageDialog(null, "Imagem(ns) adicionada com sucesso ao carrinho! ");
-            OpcoesUI op = new OpcoesUI();
-            op.setVisible(true);
-            this.dispose();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         }
+
+        OpcoesUI op = new OpcoesUI();
+        op.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_buttonAddImagemActionPerformed
 
     private void buttonVoltarPaginaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVoltarPaginaMouseClicked

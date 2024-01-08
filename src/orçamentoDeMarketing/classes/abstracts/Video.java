@@ -23,14 +23,15 @@ public abstract class Video implements Produto {
         this.tempoEstimadoServico = 0;
     }
 
-    public Video(double duracao) {
+    public Video(double duracao, String tipo) {
         this.precoFinal = 0;
         this.duracao = duracao;
         this.tempoEstimadoServico = 0;
+        this.tipo = tipo;
     }
 
     public double getPrecoFinal() {
-        return precoFinal;
+        return this.calcularPreco();
     }
 
     public void setPrecoFinal(double precoFinal) {

@@ -4,11 +4,13 @@
  */
 package orçamentoDeMarketing.classes.model.imagem;
 
+import orçamentoDeMarketing.classes.interfaces.Produto;
+
 /**
  *
  * @author rodol
  */
-public class Imagem {
+public class Imagem implements Produto {
 
     private String textoNivelDePesquisa;
     private double precoFinal;
@@ -39,8 +41,34 @@ public class Imagem {
         this.tempoEstimadoServico = tempoEstimadoServico;
     }
 
-    private double calcularTempoEstimadoDeServico(String dimensionamento, int nivelDePesquisa) {
-        //calcula o tempo necessário para pesquisar sobre o assunto do post
+    @Override
+    public double calcularPreco() {
+        switch (this.nivelDePesquisa) {
+            case 1:
+                taxaPesquisa = 130;
+                break;
+            case 2:
+                taxaPesquisa = 115;
+                break;
+            case 3:
+                taxaPesquisa = 100;
+                break;
+        }
+        //retorna valores em reais
+        return switch (this.dimensao) {
+            case "1:1" ->
+                25 + (25 * (25 / taxaPesquisa));
+            case "4:5" ->
+                30 + (35 * (35 / taxaPesquisa));
+            case "9:16" ->
+                40 + (45 * (45 / taxaPesquisa));
+            default ->
+                0;
+        };
+    }
+
+    @Override
+    public double calcularTempoEstimadoServico() {
         switch (nivelDePesquisa) {
             case 1 -> {
                 tempoPesquisa = 30;
@@ -56,40 +84,13 @@ public class Imagem {
             }
         }
         //retorna valores em minutos
-        return switch (dimensionamento) {
+        return switch (this.dimensao) {
             case "1:1" ->
                 tempoPesquisa + 45;
             case "4:5" ->
                 tempoPesquisa + 60;
             case "9:16" ->
                 tempoPesquisa + 75;
-            default ->
-                0;
-        };
-    }
-
-    private double calcularPrecoFinal(String dimensionamento, int nivelDePesquisa) {
-        //calcula a porcentagem do valor da imagem 
-        //a se acrescentar em relação ao nídel de pesquisa
-        switch (nivelDePesquisa) {
-            case 1:
-                taxaPesquisa = 130;
-                break;
-            case 2:
-                taxaPesquisa = 115;
-                break;
-            case 3:
-                taxaPesquisa = 100;
-                break;
-        }
-        //retorna valores em reais
-        return switch (dimensionamento) {
-            case "1:1" ->
-                25 + (25 * (25 / taxaPesquisa));
-            case "4:5" ->
-                30 + (35 * (35 / taxaPesquisa));
-            case "9:16" ->
-                40 + (45 * (45 / taxaPesquisa));
             default ->
                 0;
         };
@@ -112,11 +113,11 @@ public class Imagem {
     }
 
     public double getPrecoFinal() {
-        return this.calcularPrecoFinal(dimensao, nivelDePesquisa);
+        return this.calcularPreco();
     }
 
     public void setPrecoFinal() {
-        this.precoFinal = this.calcularPrecoFinal(this.dimensao, this.nivelDePesquisa);
+        this.precoFinal = this.calcularPreco();
     }
 
     public String getDimensao() {
@@ -144,7 +145,7 @@ public class Imagem {
     }
 
     public double getTempoEstimadoServico() {
-        return calcularTempoEstimadoDeServico(dimensao, nivelDePesquisa);
+        return calcularTempoEstimadoServico();
     }
 
     public void setTempoEstimadoServico(double tempoEstimadoServico) {

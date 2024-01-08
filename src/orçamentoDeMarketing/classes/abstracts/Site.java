@@ -35,7 +35,7 @@ public abstract class Site implements Produto{
     }
     
     public double getPrecoFinal() {
-        return precoFinal;
+        return calcularPreco();
     }
 
     public void setPrecoFinal(double precoFinal) {

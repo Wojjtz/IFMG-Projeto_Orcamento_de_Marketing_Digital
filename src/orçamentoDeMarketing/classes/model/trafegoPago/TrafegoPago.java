@@ -20,7 +20,7 @@ public class TrafegoPago {
     }
 
     private double calcularPrecoFinal() {
-        this.precoFinal = this.valorInvestido * 1.30;
+        this.precoFinal = (this.valorInvestido * 1.3);
         return this.precoFinal;
     }
 
