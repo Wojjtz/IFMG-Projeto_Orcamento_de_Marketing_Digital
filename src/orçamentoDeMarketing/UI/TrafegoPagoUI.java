@@ -233,8 +233,11 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonVoltarPaginaActionPerformed
 
     private void buttonAddImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddImagemActionPerformed
-        double investimento = Double.parseDouble(txtFieldValorInvestimento.getText());
         try {
+            if (txtFieldValorInvestimento.getText().isEmpty() || comboBoxNicho.getSelectedItem() == "-") {
+                throw new NullPointerException();
+            }
+            double investimento = Double.parseDouble(txtFieldValorInvestimento.getText());
             if (investimento <= 0) {
                 throw new NumberFormatException();
             }
@@ -243,6 +246,8 @@ public class TrafegoPagoUI extends javax.swing.JFrame {
             OpcoesUI op = new OpcoesUI();
             op.setVisible(true);
             this.dispose();
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "É aceito apenas valores positivos ou diferentes de zero no campo 'Investimento'.");
         } finally {
