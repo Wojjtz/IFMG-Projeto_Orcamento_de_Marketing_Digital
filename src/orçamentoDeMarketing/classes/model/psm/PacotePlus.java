@@ -5,15 +5,25 @@
 package orçamentoDeMarketing.classes.model.psm;
 
 import orçamentoDeMarketing.classes.abstracts.PacoteSocialMedia;
+import orçamentoDeMarketing.classes.interfaces.Produto;
 
 /**
  *
  * @author rodol
  */
-public class PacotePlus extends PacoteSocialMedia {
+public class PacotePlus extends PacoteSocialMedia implements Produto{
 
     public PacotePlus(String tipo, double preco, double investimento) {
         super(tipo, preco, investimento);
     }
 
+    @Override
+    public double calcularPreco() {
+        return super.getPreco();
+    }
+
+    @Override
+    public double calcularTempoEstimadoServico() {
+        return 0;
+    }
 }

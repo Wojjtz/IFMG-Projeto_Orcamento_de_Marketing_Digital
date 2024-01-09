@@ -4,11 +4,13 @@
  */
 package orçamentoDeMarketing.classes.model.trafegoPago;
 
+import orçamentoDeMarketing.classes.interfaces.Produto;
+
 /**
  *
  * @author rodol
  */
-public class TrafegoPago {
+public class TrafegoPago implements Produto{
 
     private double precoFinal;
     private String nicho;
@@ -18,18 +20,24 @@ public class TrafegoPago {
         this.valorInvestido = valorInvestido;
         this.nicho = nicho;
     }
-
-    private double calcularPrecoFinal() {
+    
+    @Override
+    public double calcularPreco() {
         this.precoFinal = (this.valorInvestido * 1.3);
         return this.precoFinal;
     }
 
+    @Override
+    public double calcularTempoEstimadoServico() {
+        return 0;
+    }
+
     public double getPrecoFinal() {
-        return this.calcularPrecoFinal();
+        return this.calcularPreco();
     }
 
     public void setPrecoFinal() {
-        this.precoFinal = this.calcularPrecoFinal();
+        this.precoFinal = this.calcularPreco();
     }
 
     public String getNicho() {
